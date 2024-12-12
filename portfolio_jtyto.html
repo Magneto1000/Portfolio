@@ -1,0 +1,445 @@
+
+   <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <style>
+        /* Estilo da Capa */
+        .capa {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000000; /* Fundo preto */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .conteudo-capa {
+            text-align: center;
+        }
+
+        .foto-apresentacao {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .frase-apresentacao {
+            font-size: 24px;
+            color: #fff; /* Texto branco para contraste */
+        }
+
+        /* Estilo da Segunda Parte */
+        .conteudo {
+            display: none; /* Ocultado inicialmente */
+            padding: 50px;
+            text-align: center;
+        }
+            /* Botões de tradução */
+        .translate-buttons {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .translate-button {
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .translate-button:hover {
+            background-color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Botões de tradução -->
+    <div class="translate-buttons">
+        <button class="translate-button" onclick="translatePage('pt')">PT</button>
+        <button class="translate-button" onclick="translatePage('en')">EN</button>
+    </div>
+    <!-- Capa do Portfólio -->
+    <div id="capa" class="capa">
+        <div class="conteudo-capa">
+            <img src="IMAGE PROFILE.jpg" alt="Descrição da imagem" style="width:100%; max-width:200px;">
+            <h1 class="frase-apresentacao">Olá, me chamo John Tyto, seja bem-vindo ao meu portfólio!</h>
+          <p>Digite qualquer tecla para continuar...</p>
+        </div>
+    </div>
+
+    <!-- Segunda Parte do Portfólio -->
+    <div id="conteudo" class="conteudo">
+        <!-- O código da segunda parte do site será inserido aqui -->
+        <h1></h1>
+        <p <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio</title>
+  <style>
+    .texto-grande {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <p class="texto-grande">"Esteja sempre no controle!"</p>
+</body>
+</html>
+</p>
+    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <style>
+        /* Estilização Geral */
+        body {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000; /* Fundo preto */
+            color: #fff;
+        }
+
+        a {
+            color: #00f;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        /* Navegação Principal */
+        #main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #111;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #main-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #main-nav ul li {
+            margin: 20px 0;
+        }
+
+        #main-nav a {
+            color: white; /* Alterado para branco */
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        #main-nav a:hover {
+            color: #F0F8FF; /* Branco para hover */
+        }
+
+        /* Botões de Redes Sociais */
+        #social-buttons {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(17, 17, 17, 0.9); /* Fundo semi-transparente */
+            padding: 10px;
+            text-align: center;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-top: 1px solid #ccc;
+        }
+
+        #social-buttons a {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-transform: uppercase;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        /* Conteúdo Principal */
+        main {
+            margin-left: 220px; /* Espaço para a navegação */
+            padding: 20px;
+        }
+
+        /* Efeitos de Transição */
+        #main-nav a, #social-buttons a {
+            display: block;
+            padding: 10px;
+            background-color: #222;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        #main-nav a:hover, #social-buttons a:hover {
+            background-color: #880000;
+            transform: translateX(10px);
+        }
+
+        /* Sombra para letras de destaque */
+        h1, a {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Ocultar barra de redes sociais em seções específicas */
+        .hide-social-buttons #social-buttons {
+            display: none;
+        }
+
+        /* Estilização dos projetos */
+        .project, .ideas-news {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .project img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .project-description, .ideas-news-description {
+            font-size: 1.2em;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            #main-nav {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            main {
+                margin-left: 0;
+            }
+
+            #social-buttons {
+                flex-direction: column;
+            }
+
+            .content-container {
+                flex-direction: column;
+            }
+        }
+
+        /* Estilização de texto com cores de código de programação */
+        .keyword { color: #00f; } /* Azul para palavras-chave */
+        .string { color: #0a0; } /* Verde para strings */
+        .comment { color: #0a0; } /* Verde para comentários */
+        .function { color: #ffa500; } /* Laranja para funções */
+
+        /* Estilização para a seção de apresentação */
+        .intro-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .intro-text, .owner-name {
+            padding: 20px;
+            background-color: #222;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .intro-text {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .owner-name {
+            flex-basis: 30%;
+            text-align: center;
+            font-size: 2.5em;
+            background-color: #444; /* Cor de fundo diferente para destaque */
+            border: 1px solid #ccc;
+        }
+
+        /* Container para dividir a tela ao meio */
+        .content-container {
+            display: flex;
+        }
+
+        .left-column, .right-column {
+            flex: 1;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Área de Navegação -->
+    <nav id="main-nav">
+        <ul>
+            <li><a href="#inicio" class="nav-link">Início</a></li>
+            <li><a href="#apresentacao" class="nav-link">Apresentação</a></li>
+            <li><a href="#projetos-desenvolvidos" class="nav-link">Projetos Desenvolvidos</a></li>
+            <li><a href="#projetos-em-desenvolvimento" class="nav-link">Projetos em Desenvolvimento</a></li>
+            <li><a href="#contatos" class="nav-link">Contatos</a></li>
+            <li><a href="#cursos-certificacoes" class="nav-link">Cursos e Certificações</a></li>
+            <li><a href="https://docs.google.com/document/d/1n78unUnmubBfwA04Xt-yhiL5s6zeSFwC/edit?usp=drive_link&ouid=107472219722631581930&rtpof=true&sd=true" target="_blank" class="nav-link">Currículo Completo</a></li>
+        </ul>
+    </nav>
+
+    <!-- Área de Botões de Redes Sociais -->
+    <div id="social-buttons">
+        <a href="https://github.com/Magneto1000" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/j-tito-742385126" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/jtyto.projectmanager?utm_source=qr&igsh=YXh4bDl3b3p1ejZp" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@printdevjohn?_t=8oUL0gOcpuQ&_r=1" target="_blank">TikTok</a>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <section id="inicio">
+            <h1><span class="keyword"></span> <span class="string"></span></h1>
+        </section>
+        <section id="apresentacao" class="intro-container">
+            <div class="intro-text">
+                <h1><span class="keyword">APRESENTAÇÃO</span></h1>
+                <p> Sempre fui aficionado por tecnologia, pela criatividade e inovação, um aspirante, um sonhador, isso eu posso dizer; me aventurei pela física, biologia, química e física quântica; brinquei com a eletrônica e mecatrônica quando criança tentando entender o mundo que me cercava. No entanto, cresci e ouvi falar da programação, do seu potencial e seu vasto universo e fiquei fascinado. Descobri que compreender a programação e dominá-la era a chave para o meu futuro, o futuro de meus projetos e ideias, e sem exageros, a possibilidade para um futuro prospero da humanidade. Profissionalmente eu apenas comecei a dar os primeiros passos, contudo minha essência criativa está ansiosa por se desenvolver nessa nova jornada. Enfim seja muito bem-vindo ao meu portfólio, aqui você poderá me conhecer um pouco mais, além das formalidades. Visualizar meus sonhos e ideias. Poderá ver um pouco do mundo que vejo através de meus projetos e intenções.</p>
+            </div>
+            <div class="owner-name">
+                <p>Minha missão é desenvolver sistemas que desenvolverão pessoas e negócios</p>
+            </div>
+        </section>
+        <section id="projetos-desenvolvidos" class="content-container">
+            <div class="left-column">
+                <h2><span class="keyword">Projetos Desenvolvidos</span></h2>
+                <div
+
+                <div class="project">
+                    <h3><span class="function">PROJETOS DE SIMULADORES</span></h3>
+                    <img src="link_da_imagem_1.jpg" alt=>
+                    <p class="project-description">
+                         Este projeto objetiva a criação de modelos computacionais (simuladores básicos) de conceitos físicos e estatísticos para serem baixados e utilizados gratuitamente por professores e alunos em sala de aula. <span class="keyword">Python</span>, <span class="keyword"></span><span class="keyword"></span> A interface é simples e intuitiva, com a funcionalidade de adicionar, editar variáveis, constantes físicas e cenários.
+                    </p>
+                </div>
+
+                <div class="project">
+                    <h3><span class="function">Projeto Explorando o sistema solar</span></h3>
+                    <img src="link_da_imagem_2.jpg" alt=>
+                    <p class="project-description">
+                        Um jogo de exploração completo onde o jogador poderá explorar de forma lúdica e interativa todo o sistema solar. O jogo foi criado usando as bibliotecas <span class="keyword">PyGames</span> e <span class="keyword">Tkinter</span>. Este projeto inclui uma API para integração com um banco de dados <span class="keyword">MySQL</span> para armazenar informações do usuário e exibir conteúdo dinâmico.
+                    </p>
+                </div>
+
+                <!-- Mais projetos podem ser adicionados aqui -->
+            </div>
+        </section>
+
+        <section id="projetos-em-desenvolvimento" class="content-container">
+            <div class="right-column">
+                <h2><span class="keyword">Projetos em Desenvolvimento</span></h2>
+                <div class="project">
+                    <h3><span class="function">PROJETO MATA ATLANTICA, DESMATAMENTO E MICROCLIMA NO CONTEXTO URBANO</span></h3>
+                    <img src="link_da_imagem_3.jpg" alt=>
+                    <p class="project-description">
+                         Este projeto trata de um estudo direcionado para a compreensão das mudanças climáticas no contexto dos microclimas provocados pelo agravamento do desmatamento do bioma da mata atlântica em um cenário urbano específico da cidade de Conceição de Macabu, localizada no norte do estado do Rio de Janeiro. O projeto está sendo desenvolvido inteiramente utilizando<span class="keyword">JupyterLabs</span>.(Para mais informações visite o site do projeto)</span></p>
+                    </p>
+                </div>
+
+                <div class="project">
+                    <h3><span class="function">PROJETO CLEAN CITY</span></h3>
+                    <img src="link_da_imagem_4.jpg" alt=>
+                    <p class="project-description">
+                      Este projeto visa mapear pontos de limpeza na cidade e ajudar a população a se mobilizar para realizar a limpeza nos pontos marcados, gerando pontos para os grupos que podem ser acumulados e trocados por descontos nos comércios locais e reconhecimento das autoridades locais. O projeto visa também notificar as autoridades sanitárias da cidade a fim de obter recursos e amparo para o projeto<span class="keyword"></span>.
+                    </p>
+                </div>
+
+                <!-- Mais projetos em desenvolvimento podem ser adicionados aqui -->
+            </div>
+        </section>
+
+        <section id="contatos">
+            <h2><span class="keyword">Contatos</span></h2>
+            <p class="ideas-news-description">Para entrar em contato comigo, você pode enviar um e-mail para: <a href="mailto:seu-email@example.com" class="function">titojneto@gmail.com</a> ou me encontrar em uma das redes sociais abaixo ou obter mais informações profissionais minhas consultando o meu currículo completo clicando na aba de mesmo nome ao lado.</p>
+        </section>
+
+        <section id="cursos-certificacoes" class="ideas-news">
+            <h2><span class="keyword">Cursos e Certificações</span></h2>
+            <p class="ideas-news-description">
+                Abaixo estão alguns dos cursos e certificações que completei:
+            </p>
+            <ul>
+                <li><span class="function">Certificação Google Project Management</span> -  Uma formação completa com duração de 6 meses para profissionais que desejam ampliar ou desenvolver suas habilidades para gerenciar projetos. Habilidades nas áreas de metodologias ágeis, ferramentas de gerenciamento de projetos, como JIRA, Microsoft Projects, CLICkUP e outras, além do estudo profundo de filosofias e técnicas de gerenciamento de projetos.</li>
+                <li><span class="function">Python for Everbody</span> -  Conjunto de cursos pertencente ao programa de promoção do ensino de python do Instituto de Tecnologia de Massachussets-MIT. Fnções, manipulação de strings, lógica de programação, Análise de Dados e etc </li>
+                <li><span class="function">Faculdade de Engenharia de Software</span> -  Alumo exemplar do 3° periódo.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+    <script>
+        // Função para esconder a capa e mostrar o conteúdo principal
+        document.addEventListener('keydown', function () {
+            const capa = document.getElementById('capa');
+            const conteudo = document.getElementById('conteudo');
+
+            // Adicionar transição suave
+            capa.style.transition = 'opacity 0.5s ease';
+            capa.style.opacity = '0';
+
+            setTimeout(function() {
+                capa.style.display = 'none';
+                conteudo.style.display = 'block'; // Mostrar o conteúdo principal
+            }, 500); // Aguarda o tempo da transição antes de ocultar
+        });
+        // Função de tradução
+          function translatePage(lang) {
+            const elements = document.querySelectorAll('[data-pt][data-en]');
+            elements.forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+ 
+
+
+
+ 
+
+

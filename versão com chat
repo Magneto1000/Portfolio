@@ -1,0 +1,318 @@
+ <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat Portfólio - Tito Neto</title>
+
+  <!-- Estilos da página -->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      transition: background-color 1s;
+    }
+
+    body.dia {
+      background-color: #ffffff;
+      color: #000;
+    }
+
+    body.noite {
+      background-color: #000000;
+    }
+
+    body.crepusculo {
+      background-color: #FFA500;
+    }
+
+    #matrizRain {
+ posição: fixa;
+ topo: 0;
+ esquerda: 0;
+      z-índice: 0;
+ larga: 100%;
+ alta: 100%;
+ fundo: preto;
+    }
+
+ .app {
+ posição: relativo;
+      z-índice: 1;
+ larga: 95%;
+ máx-larga: 500px;
+ alta: 95vh;
+ fundo-cor: #111;
+ fronteira-raio: 25px;
+ caixa-sombra: 0 0 25px rgba(255, 255, 255, 0,1);
+ exibição: flex;
+ flex-direção: coluna;
+ transbordamento: oculto;
+    }
+
+ .cabeçalho {
+ preenchimento: 10px 20px;
+ fundo-cor: #222;
+ exibição: flex;
+ alinhar-itens: centro;
+ lacuna: 10px;
+ fronteira-fundo: 1sólido px #333;
+    }
+
+ .perfil-foto {
+ largura: 50px;
+ altura: 50px;
+ fronteira-raio: 50%;
+ fundo-cor: #333;
+ fundo-tamanho: capa;
+ fundo-posição: centro;
+ fronteira: 2sólido px #666;
+ fundo-imagem: url('PERFIL DE IMAGEM.jpg');
+    }
+
+ .nome {
+ fonte-peso: negrito;
+ fonte-tamanho: 18px;
+    }
+
+ .conteúdo {
+ flex: 1;
+ preenchimento: 20px;
+ transbordamento-y: automático;
+ transição: todos 0,3s facilidade;
+    }
+
+ .mensagem-caixa {
+ fundo-cor: #222;
+ fronteira: 1sólido px #444;
+ fronteira-raio: 10px;
+ preenchimento: 15px;
+ margem-fundo: 20px;
+ animação: fadeIn 0,5s facilidade;
+    }
+
+ .botões {
+ exibição: flex;
+ flex-direção: coluna;
+ lacuna: 10px;
+    }
+
+    .buttons button, .back-button {
+      padding: 12px;
+      background-color: #333;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .buttons button:hover, .back-button:hover {
+      background-color: #880000;
+    }
+
+    .back-button {
+      background-color: #444;
+      margin-top: 20px;
+    }
+
+    .video-container {
+      width: 100%;
+      padding: 10px;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .video-container video {
+      width: 100%;
+      max-width: 360px;
+      border-radius: 10px;
+    }
+
+    .chat-window {
+      margin-bottom: 20px;
+    }
+
+    .chat-window input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 5px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .chat-response {
+      background-color: #333;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    a {
+      color: #66f;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CANVAS COM EFEITO MATRIX -->
+  <canvas id="matrixRain"></canvas>
+
+  <!-- CONTEÚDO DO APP -->
+  <div class="app">
+    <div class="header">
+      <div class="profile-pic"></div>
+      <div class="name">Tito Neto</div>
+    </div>
+
+    <div class="content" id="chat">
+      <div class="message-box">
+        👋 Olá! Eu me chamo Tito Neto. Selecione uma opção para explorar meu portfólio ou pesquise digitando o que desejar no campo abaixo!
+      </div>
+
+      <!-- Janela de chat -->
+      <div class="chat-window">
+        <input type="text" id="userQuestion" placeholder="Pergunte sobre mim aqui..." onkeypress="if(event.key === 'Enter') responderPergunta()">
+        <div id="chatResposta" class="chat-response"></div>
+      </div>
+
+      <!-- Botões de navegação -->
+      <div class="buttons">
+        <button onclick="showSection('apresentacao')">Apresentação</button>
+        <button onclick="showSection('projetos-desenvolvidos')">Projetos Desenvolvidos</button>
+        <button onclick="showSection('projetos-em-desenvolvimento')">Projetos em Desenvolvimento</button>
+        <button onclick="showSection('cursos')">Cursos e Certificações</button>
+        <button onclick="showSection('contatos')">Contatos</button>
+        <button onclick="window.open('https://docs.google.com/document/d/1n78unUnmubBfwA04Xt-yhiL5s6zeSFwC')">Currículo</button>
+      </div>
+
+      <!-- Vídeo de apresentação -->
+      <div class="video-container">
+        <video controls>
+          <source src="video-apresentacao.mp4" type="video/mp4">
+          <source src="video-apresentacao.webm" type="video/webm">
+          <source src="video-apresentacao.ogv" type="video/ogg">
+          Seu navegador não suporta a tag de vídeo. <a href="video-apresentacao.mp4">Clique aqui para baixar o vídeo</a>.
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT DE FUNCIONALIDADE -->
+  <script>
+    const chat = document.getElementById('chat');
+    let defaultContent = chat.innerHTML;
+
+    function showSection(section) {
+      let content = '';
+      if (section === 'apresentacao') {
+        content = `<div class="message-box"><h2>Apresentação</h2><p>Sempre fui aficionado por tecnologia, criatividade e inovação. Este portfólio mostra um pouco do meu universo, ideias e sonhos.</p></div>`;
+      } else if (section === 'projetos-desenvolvidos') {
+        content = `<div class="message-box"><h2>Projetos Desenvolvidos</h2><ul><li><strong>Projetos Educacionais:</strong> Ensino de HTML, CSS e Javascript para crianças da rede municipal.</li><li><strong>Jogos feitos em Python:</strong> jogo "SNAKE". "FORCA", "ASTEROID","ACELEROMETRO" feito em PyGames e Tkinter.</li><li><strong>Sistema de cadastro para empresa de locação de veículos.</li></ul></div>`;
+      } else if (section === 'projetos-em-desenvolvimento') {
+        content = `<div class="message-box"><h2>Projetos em Desenvolvimento</h2><ul><li><strong>Mata Atlântica e Microclimas:</strong> estudo urbano com JupyterLabs.</li><li><strong>Clean City:</strong> app para limpeza urbana e recompensas.</li></ul></div>`;
+      } else if (section === 'cursos') {
+        content = `<div class="message-box"><h2>Cursos e Certificações</h2><ul><li>Google Project Management</li><li>Python for Everybody - MIT</li><li>Faculdade de Engenharia de Software - 4º período</li></ul></div>`;
+      } else if (section === 'contatos') {
+        content = `<div class="message-box"><h2>Contatos</h2><p>Email: <a href="mailto:titojneto@gmail.com">titojneto@gmail.com</a></p><p><a href="https://github.com/Magneto1000" target="_blank">GitHub</a></p><p><a href="https://www.linkedin.com/in/j-tito-742385126" target="_blank">LinkedIn</a></p><p><a href="https://www.instagram.com/jtyto.projectmanager" target="_blank">Instagram</a></p><p><a href="https://www.tiktok.com/@printdevjohn" target="_blank">TikTok</a></p></div>`;
+      }
+
+      chat.innerHTML = `${content}<button class="back-button" onclick="goBack()">← Voltar</button>`;
+    }
+
+    function goBack() {
+      chat.innerHTML = defaultContent;
+    }
+
+    function atualizarTemaPorHorario() {
+      const hora = new Date().getHours();
+      const body = document.body;
+      body.classList.remove('dia', 'noite', 'crepusculo');
+      if (hora >= 6 && hora < 8 || hora >= 18 && hora < 20) {
+        body.classList.add('crepusculo');
+      } else if (hora >= 8 && hora < 18) {
+        body.classList.add('dia');
+      } else {
+        body.classList.add('noite');
+      }
+    }
+
+    atualizarTemaPorHorario();
+
+    function responderPergunta() {
+      const pergunta = document.getElementById('userQuestion').value.toLowerCase();
+      const respostaEl = document.getElementById('chatResposta');
+      let resposta = "Desculpe, não entendi. Pergunte sobre minha formação, projetos ou contatos.";
+
+      if (pergunta.includes("formação") || pergunta.includes("faculdade")) {
+        resposta = "Estou cursando Engenharia de Software (4º período) e fiz cursos como Google Project Management e Python for Everybody do MIT.";
+      } else if (pergunta.includes("projetos")) {
+        resposta = "Desenvolvi simuladores educacionais em Python e um jogo interativo sobre o Sistema Solar. Também estou trabalhando no projeto Clean City e em estudos sobre a Mata Atlântica.";
+      } else if (pergunta.includes("contato") || pergunta.includes("email")) {
+        resposta = "Você pode entrar em contato pelo email titojneto@gmail.com ou me encontrar no LinkedIn, GitHub, Instagram e TikTok.";
+      } else if (pergunta.includes("nome")) {
+        resposta = "Meu nome é John Tyto, prazer em te conhecer!";
+      }
+
+      respostaEl.textContent = resposta;
+    }
+  </roteiro>
+
+  <!-- MATRIZ ROTEIRO DO EFEITO -->
+ <roteiro>
+    const tela = documento.getElementById('matrizChuva');
+    const ctx = canvas.getContext('2d');
+
+ lona.altura = janela.internoAltura;
+ tela.width = janela.innerWidth;
+
+    const cartas = '????? ??????? (ABGGHIJKLMNOPQRSTUVWXYZ0123456789'split.('');
+    const tamanho da fonte = 14;
+    const colunas = tela.width / o Tamanho da Fonte;
+    const gotas = Matriz.de({ comprimento: colunas }). .preencher(1);
+
+ função desenharMatriz() {
+ ctx.fillStyle = 'rgba(0, 0, 0, 0,05)';
+ ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+ ctx.fillStyle = '#0F0';
+ ctx.font = `${tamanho da fonte}px monoespacial;
+
+ gotas.paraCada((ue) => {
+        const texto = cartas[Matemática.andar(Matemática.aleatório() * letras.comprimento)];
+        const x = i * o Tamanho da Fonte;
+ ctx.fillText(texto, x, y * tamanho da fonte);
+
+ se (y * fontSize > canvas.height && Matemática.aleatório() > 0,975) {
+ gotas[i] = 0;
+        }
+
+ gotas[i]++;
+      });
+    }
+
+ setInterval(drawMatrix, 33);
+
+ janela.addEventListener('redimensionar', () => {
+ tela.width = janela.innerWidth;
+ lona.altura = janela.internoAltura;
+    });
+  </roteiro>
+
+</corpo>
+</html>
